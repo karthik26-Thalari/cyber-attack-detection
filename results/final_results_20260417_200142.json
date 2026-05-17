@@ -1,0 +1,58 @@
+{
+    "timestamp": "20260417_200142",
+    "dataset": "TON_IoT (Network data)",
+    "base_paper": "Hazarika et al., IEEE Trans. ICPS, 2025",
+    "our_novelty": "First multiclass (10-class) extension of IALSTM for smart IP cameras. Applied Focal Loss to handle class imbalance in TON_IoT. Extended from binary (Normal/Attack) to 9 attack type classification.",
+    "num_classes": 9,
+    "classes": [
+        "Backdoor",
+        "DoS_DDoS",
+        "Injection",
+        "MITM",
+        "Normal",
+        "Password",
+        "Ransomware",
+        "Scanning",
+        "XSS"
+    ],
+    "method1": {
+        "name": "IALSTM + Focal Loss (Multiclass)",
+        "description": "Knowledge Distillation LSTM with Focal Loss \u2014 extended from base paper binary to multiclass",
+        "teacher_params": 129673,
+        "student_params": 10569,
+        "compression": "12.3x",
+        "accuracy": 0.74935,
+        "macro_f1": 0.569629,
+        "weighted_f1": 0.707639,
+        "per_class_f1": {
+            "Backdoor": 0.9647,
+            "DoS_DDoS": 0.8446,
+            "Injection": 0.4875,
+            "MITM": 0.0,
+            "Normal": 0.9996,
+            "Password": 0.0,
+            "Ransomware": 0.8636,
+            "Scanning": 0.9666,
+            "XSS": 0.0
+        }
+    },
+    "method2": {
+        "name": "CNN-BiLSTM-Attention + Focal Loss (Multiclass)",
+        "description": "Hybrid CNN + Bidirectional LSTM + Multi-Head Attention with Focal Loss",
+        "params": 50377,
+        "accuracy": 0.932474,
+        "macro_f1": 0.926744,
+        "weighted_f1": 0.933884,
+        "per_class_f1": {
+            "Backdoor": 1.0,
+            "DoS_DDoS": 0.9256,
+            "Injection": 0.7354,
+            "MITM": 0.9417,
+            "Normal": 0.9999,
+            "Password": 0.92,
+            "Ransomware": 0.9927,
+            "Scanning": 0.9995,
+            "XSS": 0.8258
+        }
+    }
+}
